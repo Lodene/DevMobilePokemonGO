@@ -18,12 +18,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-public class PokemonListAdapter extends
-        RecyclerView.Adapter<PokemonListAdapter.ViewHolder> {
+public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.ViewHolder> {
     List<Pokemon> pokemonList;
     public PokemonListAdapter(List<Pokemon> pokemonList) {
         assert pokemonList != null;
-        this.pokemonList =pokemonList;
+        this.pokemonList = pokemonList;
     }
     @NonNull
     @Override

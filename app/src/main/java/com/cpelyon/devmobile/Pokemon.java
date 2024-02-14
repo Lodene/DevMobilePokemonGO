@@ -23,13 +23,11 @@ public class Pokemon {
         this.type2 = type2;
     }
 
-    public String toString() {
-        StringBuilder result = new StringBuilder();
-        result.append(this.getName()).append(", ").append(this.getType1String()).append(", ");
-        if (this.getType2String() != null)
-            result.append(this.getType2String()).append(", ");
-        result.append(this.getOrder());
-        return result.toString();
+    public String toString(){
+        return (this.type2==null) ?
+                this.getName() + ", " + this.getType1String() + ", " + this.getOrder()
+                :
+                this.getName() + ", " + this.getType1String() + ", " + this.getType2String() + ", " + this.getOrder() ;
     }
     public String getName() {
         return name;
@@ -74,9 +72,9 @@ public class Pokemon {
         this.type2 = type2;
     }
     public String getType1String() {
-        return type1.name();
+        return String.valueOf(type1);
     }
     public String getType2String() {
-        return type2.name();
+        return (type2==null) ? "" : String.valueOf(type2) ;
     }
 }

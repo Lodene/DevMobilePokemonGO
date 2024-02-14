@@ -71,11 +71,8 @@ public class PokedexFragment extends Fragment {
                 int id = getResources().getIdentifier(image,"drawable",
                         binding.getRoot().getContext().getPackageName());
                 Pokemon pokemon = new Pokemon(Integer.parseInt(numero_pokedex), name, id, type1, type2);
-                try {
-                    System.out.println(pokemon.toString());
-                } catch (Exception e) {
-                    System.out.println("Erreur d'index");
-                }
+
+                System.out.println(pokemon.toString());
                 pokemonList.add(pokemon);
 
 
