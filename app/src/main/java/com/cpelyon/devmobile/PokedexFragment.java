@@ -60,6 +60,7 @@ public class PokedexFragment extends Fragment {
                 JSONObject object = array.getJSONObject(i);
                 String name = object.getString("name");
                 String image = object.getString("image");
+                String numero_pokedex = object.getString("id");
                 POKEMON_TYPE type1 = POKEMON_TYPE.valueOf(object.getString("type1"));
                 POKEMON_TYPE type2 = null;
                 if (object.has("type2")) {
@@ -67,10 +68,14 @@ public class PokedexFragment extends Fragment {
                 }
 
                 String numericPart = image.substring(1);
-
                 int id = getResources().getIdentifier(image,"drawable",
                         binding.getRoot().getContext().getPackageName());
-                Pokemon pokemon = new Pokemon(x, name, id, type1, type2);
+                Pokemon pokemon = new Pokemon(Integer.parseInt(numero_pokedex), name, id, type1, type2);
+                try {
+                    System.out.println(pokemon.toString());
+                } catch (Exception e) {
+                    System.out.println("Erreur d'index");
+                }
                 pokemonList.add(pokemon);
 
 

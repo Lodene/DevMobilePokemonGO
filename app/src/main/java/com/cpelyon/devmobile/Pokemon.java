@@ -22,6 +22,15 @@ public class Pokemon {
         this.type1 = type1;
         this.type2 = type2;
     }
+
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append(this.getName()).append(", ").append(this.getType1String()).append(", ");
+        if (this.getType2String() != null)
+            result.append(this.getType2String()).append(", ");
+        result.append(this.getOrder());
+        return result.toString();
+    }
     public String getName() {
         return name;
     }
