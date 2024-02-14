@@ -41,6 +41,8 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.
         holder.binding.number.setText("#"+pokemon.getOrder());
         if (pokemon.getType2() != null) {
             holder.binding.type2Text.setText(pokemon.getType2String());
+        } else {
+            holder.binding.type2Text.setText("");
         }
     }
     @Override
